@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>XPS Chatroom</title>
+    <meta name="google-site-verification" content="cJw_xxZ5gpFwnjCvpmPerRbtsvs2XPDcL5WnBQ_V5Bk" />
+    <meta name="charset" charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+</head>
+<body onload="onload()">
+    <audio id="Ding" src="Ding.mp3"></audio>
+	<div class="container" id="container">
+		<div class="form-container log-in-container">
+			<form>
+				<h1 class="h1new">XPS Chatroom</h1>
+				<input id="NameInput" type="text" placeholder="Username" />
+				<input type="password" id="IDInput" placeholder="Chatroom" />
+				<input id="ConnectButton" class="Button" type="button" value="Connect" onclick="Connect()" />
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-right">
+					<h2 class="RoomID" id="RoomID">Chatroom : None</h2>
+                    <div id="Chat">
+                        <p id="Message0" class="Message">-</p>
+                        <p id="Message1" class="Message">-</p>
+                        <p id="Message2" class="Message">-</p>
+                        <p id="Message3" class="Message">-</p>
+                        <p id="Message4" class="Message">-</p>
+                        <label id="MessageLabel">Message: </label>
+                        <input id="ComposedMessage" onkeydown="if (event.keyCode == 13) document.getElementById('SendMessage').click()" type="text" value="" />
+                        <button id="SendMessage" class="Button" onclick="Send()">Send</button>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
